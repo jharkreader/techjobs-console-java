@@ -2,6 +2,7 @@ package org.launchcode.techjobs.console;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -116,9 +117,15 @@ public class TechJobs {
         }
         else {
             System.out.println("Jobs found: \n");
+            // iterate through ArrayList of job entries
             for (int i=0; i<someJobs.size(); i++) {
                 System.out.println("****");
-                System.out.println("Job data here");
+            // instantiate job object from ArrayList
+                HashMap<String, String> jobEntry = someJobs.get(i);
+            // iterate through key/value pairs in JobData HashMap
+                for (Map.Entry<String, String> jobDetails : jobEntry.entrySet()) {
+                    System.out.println(jobDetails.getKey() + ": " + jobDetails.getValue());
+                }
                 System.out.println("****\n");
             }
         }
