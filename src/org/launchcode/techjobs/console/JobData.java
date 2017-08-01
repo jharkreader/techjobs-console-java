@@ -85,6 +85,22 @@ public class JobData {
     }
 
     /**
+     * Returns search of jobs using one search term across all fields
+     */
+
+    public static ArrayList<HashMap<String, String>> findByValue(String value) {
+
+        // load data, if not already loaded
+        loadData();
+
+        ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+
+
+
+        return jobs;
+    }
+
+    /**
      * Read in data from a CSV file and store it in a list
      */
     private static void loadData() {
