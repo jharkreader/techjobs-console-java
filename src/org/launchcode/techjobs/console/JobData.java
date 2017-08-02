@@ -66,7 +66,6 @@ public class JobData {
      * @return List of all jobs matching the criteria
      */
     public static ArrayList<HashMap<String, String>> findByColumnAndValue(String column, String value) {
-
         // load data, if not already loaded
         loadData();
 
@@ -80,14 +79,12 @@ public class JobData {
                 jobs.add(row);
             }
         }
-
         return jobs;
     }
 
     /**
      * Returns search of jobs using one search term across all fields
      */
-
     public static ArrayList<HashMap<String, String>> findByValue(String value) {
 
         // load data, if not already loaded
@@ -95,7 +92,14 @@ public class JobData {
 
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
-
+        for (HashMap<String, String> job : allJobs) {
+            for (String field : job.values()) {
+                if (field.equals(value)) {
+                    jobs.add(job);
+                    break;
+                }
+            }
+        }
 
         return jobs;
     }
