@@ -98,7 +98,7 @@ public class JobData {
         for (HashMap<String, String> job : allJobs) {
             for (String field : job.values()) {
                 String caseInsensitiveValue = field.toLowerCase();
-                if (caseInsensitiveValue.equals(value)) {
+                if (caseInsensitiveValue.contains(value)) {
                     jobs.add(job);
                     break;
                 }
